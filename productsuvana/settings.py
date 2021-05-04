@@ -119,10 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
-MEDIA_URL = '/media/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = "/home/suvanaenergy/product-management-System/static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -130,8 +127,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-AUTHENTICATION_BACKENDS = ( 
-    'django.contrib.auth.backends.ModelBackend', 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
 )
 
 LOGIN_REDIRECT_URL = "/"
@@ -144,7 +141,9 @@ EMAIL_HOST_USER = 'ekesel05@gmail.com'
 EMAIL_HOST_PASSWORD = 'kt6uqn0kss'
 DEFAULT_FROM_EMAIL = '"ekesel" <ekesel05@gmail.com>'
 SERVER_EMAIL = 'ekesel05@gmail.com'
-ADMINS = (('ekesel', 'ekesel05@gmail.com'))
+ADMINS = (('ekesel', 'ekesel05@gmail.com'),)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 
 from django.contrib.messages import constants as messages
 

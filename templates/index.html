@@ -6,117 +6,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="https://getbootstrap.com/docs/4.1/assets/img/favicons/favicon.ico">
+   <!-- <link rel="icon" href="https://getbootstrap.com/docs/4.1/assets/img/favicons/favicon.ico">-->
 
     <title>{{headtitle}}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.1/examples/blog/">
 
     <!-- Bootstrap core CSS -->
-    <link href="{% static 'Blog%20Template%20for%20Bootstrap_files/bootstrap.css' %}" rel="stylesheet">
+    <link href="/static/Blog%20Template%20for%20Bootstrap_files/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="{% static 'Blog%20Template%20for%20Bootstrap_files/css.css' %}" rel="stylesheet">
-    <link href="{% static 'Blog%20Template%20for%20Bootstrap_files/blog.css' %}" rel="stylesheet">
+    <link href="/static/Blog%20Template%20for%20Bootstrap_files/css.css" rel="stylesheet">
+    <link href="/static/Blog%20Template%20for%20Bootstrap_files/blog.css" rel="stylesheet">
+    <link rel="icon" href="/static/suvimg.jpeg" type="image/png">
   </head>
 
   <body data-new-gr-c-s-check-loaded="8.871.0" data-gr-ext-installed="">
 
-    <div class="container">
+    <div class="container" style="color:black;">
       <header class="blog-header py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
           <div class="col-4 pt-1">
-            <a class="text-muted" href="{% url 'index' %}">PMS</a>
+            <a class="text-muted" href="{% url 'index' %}">PRODUCT MANAGEMENT SYSTEM</a>
           </div>
           <div class="col-4 text-center">
-            <a class="blog-header-logo text-dark" href="{% url 'index' %}">Products Suvana!</a>
+            <a class="blog-header-logo text-dark" href="{% url 'index' %}">PRODUCTS-SUVANA</a>
           </div>
           <div class="col-4 d-flex justify-content-end align-items-center">
             <a class="text-muted" href="{% url 'index' %}">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3"><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="21" y1="21" x2="15.8" y2="15.8"></line></svg>
             </a>
             {%if user.is_authenticated %}
-            <a class="btn btn-sm btn-outline-secondary" href="{% url 'logouts' %}">logout</a>
+            <a class="btn btn-sm btn-outline-secondary" href="{% url 'logouts' %}">LOGOUT</a>
             {%else%}
-            <a class="btn btn-sm btn-outline-secondary" href="{% url 'login' %}">Login</a>
+            <a class="btn btn-sm btn-outline-secondary" href="{% url 'login' %}">LOGIN</a>
             {%endif%}
           </div>
         </div>
         <style>
             body{
                 background:#f2f3f8;
+                background-repeat:repeat;
                 margin-top:20px;
             }
-            
-            
+
+
             .page.has-sidebar.bordered .page-header {
                margin-bottom: 0;
             }
-            
+
             .page.has-sidebar.bordered .page-inner {
                padding-bottom: 0;
                padding-top: 0px;
             }
-            
+
             .page.has-sidebar.bordered .left-side-sidebar {
                padding-top: 50px;
                padding-bottom: 50px;
             }
-            
+
             .page.has-sidebar.bordered .right-side-sidebar {
                padding-top: 50px;
                padding-bottom: 50px;
             }
-            
+
             .has-sidebar.bordered.has-right-sidebar .left-side-sidebar {
                border-right: 1px solid rgba(0,0,0,0.1) !important;
                box-shadow: 1px 0px 0px 0px rgba(255,255,255,0.715) !important;
                padding-right: 45px;
             }
-            
+
             .has-sidebar.bordered.has-right-sidebar .right-side-sidebar {
                padding-left: 40px;
             }
-            
+
             .has-sidebar.bordered.has-left-sidebar .right-side-sidebar {
                padding-left: 45px;
             }
-            
+
             .has-sidebar.bordered.has-left-sidebar .left-side-sidebar {
                border-right: 1px solid rgba(0,0,0,0.1) !important;
                box-shadow: 1px 0px 0px 0px rgba(255,255,255,0.715) !important;
                padding-right: 40px;
             }
-            
+
             .page.has-sidebar .left-side-sidebar {
                padding-top: 50px;
                padding-bottom: 50px;
             }
-            
+
             .page.has-sidebar .page-inner {
                padding-bottom: 0;
                padding-top: 0px;
             }
-            
+
             .page.has-sidebar .right-side-sidebar {
                padding-top: 50px;
                padding-bottom: 50px;
             }
-            
+
             /* --------------------------------------------
                SEARCH LIST
              -------------------------------------------- */
-            
+
             .xsearch-items {
                padding-left: 0px;
             }
-            
-            
+
+
             .search-item-img {
                float: left;
                position: relative;
             }
-            
+
             .search-item-img img, .search-item-img .img-holder {
                height: 70px;
                width: 70px;
@@ -127,101 +129,101 @@
                box-shadow: 0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
                border: 4px solid white;
             }
-            
+
             .search-item-img .img-holder {
                border: 1px solid #e3e3e3;
                line-height: 20px;
                background: #f7f7f7;
                border-color: rgba(207,215,223,.25);
             }
-            
+
             .search-item-img .img-holder i {
                display: inline-block;
                padding: 28px 20px;
                font-size: 28px;
                opacity: 0.5;
             }
-            
+
             .search-item-content {
                margin-left: 100px;
                padding-bottom: 35px;
                margin-bottom: 20px;
                /*border-bottom: 1px solid rgb(231, 231, 231);*/
             }
-            
+
             .search-item-content.no-excerpt h3 {
                margin-top: 8px;
             }
-            
+
             .search-item-content .search-item-meta {
                display: block;
                margin-bottom: 10px;
             }
-            
+
             .search-item-meta-down a,
             .search-item-meta a {
                font-size: 11px;
                text-transform: uppercase;
             }
-            
+
             .xsearch-items a:hover {
                border-bottom-width: 1px;
                border-bottom-style: dotted;
             }
-            
+
             .search-item-content .time {
                color: #999;
                font-size: 11px;
                text-transform: uppercase;
             }
-            
+
             .search-item-content time,
             .search-item-content span {
                color: #999999;
             }
-            
+
             .xsearch-items h3.search-item-caption {
                margin-bottom: 2px;
                font-weight: 600;
                font-size: 20px;
             }
-            
+
             .xsearch-items .search-item-meta-down {
                margin-top: 5px;
                color: #999;
                font-size: 12px;
             }
-            
+
             .xsearch-items .star-vote li {
                padding: 0;
                font-size: 14px;
             }
-            
+
             .xsearch-result-count {
                color: #999;
                margin-bottom: 30px;
             }
-            
-            
+
+
             ul.xsearch-items-2 {
                padding-left: 0;
                margin-left: 0;
             }
-            
+
             .xsearch-items-2 li {
                list-style: none;
             }
-            
-            
+
+
             .xsearch-info-meta:before, .xsearch-info-meta:after {
                content: "";
                display: table;
             }
-            
+
             .xsearch-info-meta:after {
                clear: both;
             }
-            
+
             .xsearch-info-meta {
                padding: 0;
                margin: 0;
@@ -230,101 +232,101 @@
                font-size: 12px;
                opacity: 0.7;
             }
-            
+
             .xsearch-info-meta-item {
                float: left;
                margin-right: 10px;
             }
-            
+
             .xsearch-item-title h3,
             .xsearch-item-title h4 {
                margin-bottom: 5px;
             }
-            
+
             .xsearch-desc {
                margin-bottom: 2px;
             }
-            
+
             .search-item-icon {
                padding-right: 3px;
             }
-            
+
             nav.xsearch-navbar {
                padding-left: 0;
             }
-            
+
             nav.xsearch-navbar.navbar-light .navbar-nav .active > .nav-link {
                border-bottom-width: 2px;
                border-bottom-style: solid;
                padding-bottom: 12px;
             }
-            
+
             .xsearch-item .xsearch-item-title strong {
                font-weight: 600;
             }
-            
+
             ul.xsearch-items-2 .xsearch-item {
                margin-bottom: 40px;
             }
-            
+
             .xsearch-item .xsearch-desc strong {
                color: #111;
             }
-            
-            
-            
+
+
+
             .search-result-wrap .search-result-item {
                padding-bottom: 25px;
                padding-top: 25px;
                border-bottom: 1px solid rgba(207,215,223,.25);
             }
-            
+
             .search-result-wrap .search-result-item .title h4,
             .search-result-wrap .search-result-item .title h3 {
                margin-bottom: 5px;
             }
-            
+
             .search-result-item-meta {
                font-size: 14px;
                margin-bottom: 10px;
                margin-left: 25px;
             }
-            
+
             .search-result-item-meta li {
                color: #999;
                margin-right: 5px;
             }
-            
+
             .search-result-item-meta li i {
                margin-right: 4px;
             }
-            
+
             .search-result-item-meta li a {
                /*border-bottom:1px dotted rgba(207,215,223,.25);
                 padding-bottom:2px;*/
                color: #1a0dab;
             }
-            
+
             .search-result-item-link,
             .search-result-item-excerpt,
             .search-result-item-meta {
                margin-left: 25px;
             }
-            
+
             .search-result-item-excerpt strong {
                color: #444;
                font-weight: 600;
             }
-            
+
             .search-result-item-excerpt {
                margin-bottom: 5px;
             }
-            
+
             .search-result-item-meta li:first-child {
                margin-left: 0;
                padding-left: 0;
             }
-            
+
             ul {
                 list-style-type: none;
             }
@@ -333,7 +335,7 @@
 
       <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
-          <a class="p-2 text-muted" href="{% url 'about' %}">About Developer!</a>
+          <a class="p-2 text-muted" href="{% url 'about' %}" style="color:black;">ABOUT DEVELOPER</a>
           {%if user.is_authenticated %}
           <a class="p-2 text-muted" href="{% url 'logouts' %}">Logout</a>
           {%else%}
@@ -348,13 +350,65 @@
               <div class="col-md-8 left-side-sidebar">
                   <div class="row text-center">
                       <div class="col-md-8 offset-md-2">
-                          <h3>Not happy with the results?</h3>
+                          <h3 style="color:blue;margin-left:150px;">Not happy with the results?</h3>
+                          <form action="" method="post">
+                             {%csrf_token%}
+                             <select name="cat" id="">
+                                <option value="GLASS TUBE ROTAMETER">GLASS TUBE ROTAMETER</option>
+                                <option value="VERTICAL MOUNTING BY-PASS GLASS TUBE ROTAMETER WITH CARRIER RING">VERTICAL MOUNTING BY-PASS GLASS TUBE ROTAMETER WITH CARRIER RING</option>
+                                <option value="GLASS TUBE ROTAMETER COUNTER FLANGE (S304) NUT & BOLT (SS304) & GASKET (PTFE)">GLASS TUBE ROTAMETER COUNTER FLANGE (S304) NUT & BOLT (SS304) & GASKET (PTFE)</option>
+                                <option value="ONLY ORIFICE PLATE AND GLASS TUBE ROTAMETER (IP-65) WITHOUT CARRIER RING AND IMPULSE PIPING FOR BY-PASS INSTALLATION (D/D2 TAPPING)">ONLY ORIFICE PLATE AND GLASS TUBE ROTAMETER (IP-65) WITHOUT CARRIER RING AND IMPULSE PIPING FOR BY-PASS INSTALLATION (D/D2 TAPPING)</option>
+                                <option value="GLASS TUBE ROTAMETER WITH IP-65 HOUSING">GLASS TUBE ROTAMETER WITH IP-65 HOUSING</option>
+                                <option value="METAL TUBE ROTAMETER">METAL TUBE ROTAMETER</option>
+                                <option value="METAL TUBE ROTAMETER WITH 4-20 MAMP 2 WIRE LOOP POWERED TRANSMITTER & TOTALIZER">METAL TUBE ROTAMETER WITH 4-20 MAMP 2 WIRE LOOP POWERED TRANSMITTER & TOTALIZER</option>
+                                <option value="BY-PASS METAL TUBE ROTAMETER WITH CARRIER RING">BY-PASS METAL TUBE ROTAMETER WITH CARRIER RING</option>
+                                <option value="METAL TUBE ROTAMETER WITH 2 NOS.FLOW ALARM SWITCH ADJUSTABLE THROUGHOUT FLOW RANGE">METAL TUBE ROTAMETER WITH 2 NOS.FLOW ALARM SWITCH ADJUSTABLE THROUGHOUT FLOW RANGE</option>
+                                <option value="METAL TUBE ROTAMETER WITH COUNTER FLANGES (SS316) NUT & BOLT (SS304) & GASKET (PTFE)">METAL TUBE ROTAMETER WITH COUNTER FLANGES (SS316) NUT & BOLT (SS304) & GASKET (PTFE)</option>
+                                <option value="ACRYLIC BODY ROTAMETER">ACRYLIC BODY ROTAMETER</option>
+                                <option value="ACRYLIC BODY ROTAMETER WITH FLANGED CONNECTION WITHOUT ISOLATION VALVE">ACRYLIC BODY ROTAMETER WITH FLANGED CONNECTION WITHOUT ISOLATION VALVE</option>
+                                <option value="ACRYLIC BODY ROTAMETER WITH FLANGED CONNECTION">ACRYLIC BODY ROTAMETER WITH FLANGED CONNECTION</option>
+                                <option value="ACRYLIC BODY ROTAMETER WITH VERTICAL SCREWED CONNECTION AND WITHOUT ISOLATION VALVE">ACRYLIC BODY ROTAMETER WITH VERTICAL SCREWED CONNECTION AND WITHOUT ISOLATION VALVE</option>
+                                <option value="ACRYLIC BODY ROTAMETER WITH VERTICAL FLANGED CONNECTION WITH ISOLATION VALVE & WITH 2 NOS. COUNTER FLANGES (SS304), NUT-BOLT (S.S) & GASKET (AF-120)">ACRYLIC BODY ROTAMETER WITH VERTICAL FLANGED CONNECTION WITH ISOLATION VALVE & WITH 2 NOS. COUNTER FLANGES (SS304), NUT-BOLT (S.S) & GASKET (AF-120)</option>
+                                <option value="ACRYLIC BODY ROTAMETER WITH VERTICAL TRICLOVER CONNECTION AND WITHOUT ISOLATION VALVE">ACRYLIC BODY ROTAMETER WITH VERTICAL TRICLOVER CONNECTION AND WITHOUT ISOLATION VALVE</option>
+                                <option value="ACRYLIC BODY ROTAMETER WITH UNION FITTING">ACRYLIC BODY ROTAMETER WITH UNION FITTING</option>
+                                <option value="PURGE ROTAMETER WITH VERTICAL FLANGED CONNECTION WITH ISOLATION VALVE">PURGE ROTAMETER WITH VERTICAL FLANGED CONNECTION WITH ISOLATION VALVE</option>
+                                <option value="PURGE ROTAMETER WITH REAR SCREWED CONNECTION AND WITH ISOLATION VALVE">PURGE ROTAMETER WITH REAR SCREWED CONNECTION AND WITH ISOLATION VALVE</option>
+                                <option value="PURGE ROTAMETER WITH VERTICAL SCREWED CONNECTION">PURGE ROTAMETER WITH VERTICAL SCREWED CONNECTION</option>
+                                <option value="PURGE ROTAMETER WITH VERTICAL SCREWED CONNECTION AND WITHOUT ISOLATION VALVE">PURGE ROTAMETER WITH VERTICAL SCREWED CONNECTION AND WITHOUT ISOLATION VALVE</option>
+                                <option value="PURGE ROTAMETER WITH VERTICAL FLANGED CONNECTION">PURGE ROTAMETER WITH VERTICAL FLANGED CONNECTION</option>
+                                <option value="PURGE ROTAMETER WITH VERTICAL FLANGED CONNECTION AND WITH ISOLATION VALVE AND SS304 HOUSING {WITH 2NOS COUNTER FLANGES (SS304), NUTS & BOLTS (SS) AND GASKET (PTFE)}">PURGE ROTAMETER WITH VERTICAL FLANGED CONNECTION AND WITH ISOLATION VALVE AND SS304 HOUSING {WITH 2NOS COUNTER FLANGES (SS304), NUTS & BOLTS (SS) AND GASKET (PTFE)}</option>
+                                <option value="PURGE ROTAMETER WITH VERTICAL FLANGED CONNECTION WITH SS304 HOUSING">PURGE ROTAMETER WITH VERTICAL FLANGED CONNECTION WITH SS304 HOUSING</option>
+                             </select>
+                             <select name="sizes" id="">
+                                <option value="15 NB">15 NB</option>
+                                <option value="20 NB">20 NB</option>
+                                <option value="25 NB">25 NB</option>
+                                <option value="32 NB">32 NB</option>
+                                <option value="40 NB">40 NB</option>
+                                <option value="50 NB">50 NB</option>
+                                <option value="65 NB">65 NB</option>
+                                <option value="80 NB">80 NB</option>
+                                <option value="100 NB">100 NB</option>
+                                <option value="125 NB">125 NB</option>
+                                <option value="200 NB">200 NB</option>
+                                <option value="300 NB">300 NB</option>
+                                <option value='3" NB'>3" NB</option>
+                                <option value='4" NB'>4" NB</option>
+                                <option value='6" NB'>6" NB</option>
+                                <option value='8" NB'>8" NB</option>
+                                <option value="150 NB">150 NB</option>
+                                <option value='3/8"'>3/8"</option>
+                                <option value='1/4"'>1/4"</option>
+                                <option value='1/2"'>1/2"</option>
+                             </select>
+                             <input type="submit" value="SUBMIT">
+                          </form>
                           <p class="body-text-3x">Type your search again with the info you have. Give Spaces in Between!</p>
                           <div class="small-search-wrap">
                               <div class="search-form">
-                                  <form action="#">
+                                  <form action="#" method="GET">
                                       <div class="form-group">
-                                          <input type="text" name="q" placeholder="Search your Product by typing the Specs you know with spaces" maxlength="100" class="form-control">
+                                          <input type="text" name="q" placeholder="TYPE SPECIFICATIONS OR ANY DETAIL YOU HAVE WITH SPACES!" maxlength="100" class="form-control">
                                       </div>
                                   </form>
                               </div>
@@ -367,19 +421,19 @@
                           </div>
                       </div>
                   </div>
-      
+
                   <div class="clearfix mt-40">
                       <ul class="xsearch-items">
                           {%for product in products %}
                           <li class="search-item">
                               <div class="search-item-img">
-                                  <a href="#">
+                                  <a href="{% url 'details' product.id %}">
                                       <img src="https://bootdey.com/img/Content/avatar/avatar2.png" width="70" height="70">
                                   </a>
                               </div>
                               <div class="search-item-content">
                                   <h3 class="search-item-caption">{{product.modelno}}</h3>
-      
+
                                   <div class="search-item-meta mb-15">
                                   </div>
                                   <div>
@@ -403,15 +457,15 @@
           <a href="#">Back to top</a>
         </p>
       </footer>
-  
+
       <!-- Bootstrap core JavaScript
       ================================================== -->
       <!-- Placed at the end of the document so the pages load faster -->
-      <script src="{% static 'Blog%20Template%20for%20Bootstrap_files/jquery-3.js' %}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="/static/Blog%20Template%20for%20Bootstrap_files/jquery-3.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-      <script src="{% static 'Blog%20Template%20for%20Bootstrap_files/popper.js' %}"></script>
-      <script src="{% static 'Blog%20Template%20for%20Bootstrap_files/bootstrap.js' %}"></script>
-      <script src="{% static 'Blog%20Template%20for%20Bootstrap_files/holder.js' %}"></script>
+      <script src="/static/Blog%20Template%20for%20Bootstrap_files/popper.js"></script>
+      <script src="/static/Blog%20Template%20for%20Bootstrap_files/bootstrap.js"></script>
+      <script src="/static/Blog%20Template%20for%20Bootstrap_files/holder.js"></script>
       <script>
         Holder.addTheme('thumb', {
           bg: '#55595c',
@@ -419,6 +473,6 @@
           text: 'Thumbnail'
         });
       </script>
-    
-  
+
+
   <svg xmlns="http://www.w3.org/2000/svg" width="200" height="250" viewBox="0 0 200 250" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="13" style="font-weight:bold;font-size:13pt;font-family:Arial, Helvetica, Open Sans, sans-serif">Thumbnail</text></svg></body></html>
